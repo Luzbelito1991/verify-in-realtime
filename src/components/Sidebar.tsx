@@ -14,9 +14,9 @@ import { useState } from "react";
 const menuItems = [
   { icon: LayoutDashboard, label: "Dashboard", path: "/" },
   { icon: MessageSquare, label: "Verificar SMS", path: "/verificar" },
-  { icon: FileText, label: "Panel SMS", path: "/sms" },
+  { icon: FileText, label: "SMS Enviados", path: "/sms" },
+  { icon: Shield, label: "SMS Recibidos", path: "/admin-sms" },
   { icon: Users, label: "Usuarios", path: "/usuarios" },
-  { icon: Shield, label: "Admin SMS", path: "/admin-sms" },
 ];
 
 export const Sidebar = () => {
