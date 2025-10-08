@@ -10,7 +10,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { Send, X, Dices } from "lucide-react";
@@ -42,7 +41,7 @@ export default function VerificarSMS() {
     sucursal: "",
     codigo: "",
   });
-  const [mensajesRecibidos, setMensajesRecibidos] = useState<string[]>([]);
+  
   const [customSucursales, setCustomSucursales] = useState(sucursales);
   const [showAddSucursal, setShowAddSucursal] = useState(false);
   const [newSucursal, setNewSucursal] = useState({ codigo: "", nombre: "" });
@@ -156,7 +155,6 @@ export default function VerificarSMS() {
 
   const handleCancel = () => {
     setFormData({ dni: "", celular: "", sucursal: "", codigo: "" });
-    setMensajesRecibidos([]);
     setErrors({ dni: "", celular: "" });
   };
 
@@ -170,8 +168,7 @@ export default function VerificarSMS() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          <Card className="lg:col-span-2">
+        <Card>
             <CardHeader>
               <CardTitle>Datos de Verificación</CardTitle>
             </CardHeader>
@@ -283,26 +280,6 @@ export default function VerificarSMS() {
               </form>
             </CardContent>
           </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle>Mensajes Recibidos</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <Textarea
-                placeholder="Los mensajes SMS recibidos aparecerán aquí..."
-                value={mensajesRecibidos.join("\n\n")}
-                readOnly
-                className="min-h-[300px] bg-muted/50"
-              />
-              {mensajesRecibidos.length > 0 && (
-                <p className="text-xs text-muted-foreground mt-2">
-                  {mensajesRecibidos.length} mensaje(s) recibido(s)
-                </p>
-              )}
-            </CardContent>
-          </Card>
-        </div>
 
         <Dialog open={showAddSucursal} onOpenChange={setShowAddSucursal}>
           <DialogContent>
