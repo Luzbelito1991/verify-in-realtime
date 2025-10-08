@@ -168,7 +168,8 @@ export default function VerificarSMS() {
           </p>
         </div>
 
-        <Card>
+        <div className="max-w-2xl mx-auto">
+          <Card>
             <CardHeader>
               <CardTitle>Datos de Verificación</CardTitle>
             </CardHeader>
@@ -280,6 +281,7 @@ export default function VerificarSMS() {
               </form>
             </CardContent>
           </Card>
+        </div>
 
         <Dialog open={showAddSucursal} onOpenChange={setShowAddSucursal}>
           <DialogContent>
