@@ -1,1 +1,4 @@
 project_id = "edubqhejkcbpydbzxycg"
+
+[functions.enviar-sms]
+verify_jwt = true
